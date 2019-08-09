@@ -9,6 +9,7 @@ spec:
       targetPort: 8080
   selector:
     app: hello-k8s
+    version: "BUILD_NUMBER"
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -16,18 +17,15 @@ metadata:
   name: hello-k8s
 spec:
   replicas: 3
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 2
-      maxSurge: 2
   selector:
     matchLabels:
       app: hello-k8s
+      version: "BUILD_NUMBER"
   template:
     metadata:
       labels:
         app: hello-k8s
+        version: "BUILD_NUMBER"
     spec:
       containers:
         - name: hello-k8s
