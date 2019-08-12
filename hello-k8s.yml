@@ -27,7 +27,7 @@ spec:
       containers:
         - name: hello-k8s
           image: CONTAINER_IMAGE
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           securityContext:
             privileged: false
             readOnlyRootFilesystem: true
