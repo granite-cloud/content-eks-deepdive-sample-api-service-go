@@ -11,7 +11,7 @@ spec:
     app: hello-k8s
     version: "BUILD_NUMBER"
 ---
-apiVersion: apps/v1
+apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
   name: hello-k8s
